@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="icofont.css">
+    <style>
+        body{
+            font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,sans-serif;
+            
+        }
+
+        .clearfix::before,
+        .clearfix::after{
+            
+            display: table;
+            content:'';
+            clear:both;
+        }
+
+        .nav-wrapper{
+            width: 100%;
+            background-color: rgb(227, 228, 229);
+            border-bottom:1px rgb(221, 221, 221) solid;
+            height: 30px;
+            line-height: 30px;
+            /* height: 30px; */
+        }
+
+        .nav{
+            width:1210px;
+            height: 100%;
+            margin: 0 auto;
+        }
+
+        .location{
+            width:58px;
+            height: 100%;
+            float: left;
+        }
+
+        div.shortcut{
+            width: 60%;
+            float:right;
+        }
+
+        .shortcut li{
+            
+            float:left;
+        }
+
+        .shortcut .line li{
+            width: 1px;
+        }
+
+        /* li.shortcut{
+            float: left;
+        } */
+
+        /* li :not(.line):not(.loginAndRegister):not(.arrow){
+            width:  8.9%;
+            padding-left: 7px;
+            padding-right: 7px;
+            position: relative;
+            
+        } */
+
+        li:not([class]){
+            width:  62px;
+            text-align: center;
+            position: relative;
+        }
+
+        li.list{
+            width:  77px;
+            position: relative;
+        }
+
+        div.list{
+            padding-left: 7px;
+            padding-right: 20px;
+        }
+
+        div.line{
+            background-color: rgb(204, 204, 204);
+            width: 1px;
+            height: 10px;
+            margin:11px 5px 0 5px;
+        }
+
+        li.loginAndRegister{
+            width: 19%;
+            /* text-align: middle; */
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            
+        }
+
+        a.login{
+            /* text-align: left; */
+        }
+
+        a.register{
+            /* display: inline; */
+            /* text-align: left;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis; */
+            
+        }
+
+        li,a{
+            color: rgb(168, 168, 168);
+            text-decoration: none;
+        }
+
+        li>a.register{
+            color: rgb(227, 51, 51);
+        }
+
+        i.arrow{
+            
+            position: absolute;
+            right: 5px;
+            top: 10px;
+            line-height: 12px;
+        }
+
+
+
+        a:hover{
+
+            color: rgb(227, 51, 51);
+        }
+/* 
+        .shortcut>ul>li:not(.loginAndRegister):not(.line):hover{
+          
+            background-color: rgb(255,255,255);
+            /* border:1px rgb(204, 204, 204) solid; */
+            /* border-bottom: 0px;
+         } */
+  
+
+        #qiyecaigou>div>a{
+            color: rgb(227, 51, 51);
+        }
+
+        .city-list{
+            display: none;
+            width: 300px;
+            height: 442px;
+            padding: 10px 10px 10px 10px;
+            background-color: rgb(255,255,255);
+            border:1px rgb(204, 204, 204) solid;
+            border-top: 0;
+        }
+
+        .location-tag:hover a{
+            color: rgb(227, 51, 51);
+            
+        }
+
+        .location:hover .city-list{
+            display: inline-block;
+        }
+
+        .location:hover .location-tag{
+            width: 58px;
+            background-color: rgb(255,255,255);
+            border:1px rgb(204, 204, 204) solid;
+            border-bottom: 0px;
+        }
+        
+        div.location>a{
+            text-align: center;
+        }
+
+        div.item-list li{
+            width: 60px;
+            height: 28px;
+            float: left;
+        }
+
+        div.item-list>ul>li:hover{
+            background-color: rgb(244, 244, 244);
+        }
+
+        div.item-list div{
+            text-align: center;
+            margin: auto 1px;
+        }
+
+        .myjdlist{
+            display: none;
+            width: 282px;
+            height: 163px;
+            background-color: rgb(255,255,255);
+            border:1px rgb(204, 204, 204) solid;
+        }
+
+        .qiyecaigoulist{
+            display: none;
+            width: 282px;
+            height: 163px;
+            background-color: rgb(255,255,255);
+            border:1px rgb(204, 204, 204) solid;
+        }
+
+        #myjd:hover .myjdlist{
+            display: block;
+            background-color: rgb(255,255,255);
+            border:1px rgb(204, 204, 204) solid;
+            border-top: 0;
+        }
+
+        #myjd:hover .list{
+            background-color: rgb(255,255,255);
+            border:1px rgb(204, 204, 204) solid;
+            border-bottom: 0;
+        }
+
+        #qiyecaigou:hover .qiyecaigoulist{
+            display: block;
+            background-color: rgb(255,255,255);
+            border:1px rgb(204, 204, 204) solid;
+            border-top: 0;
+        }
+
+        #qiyecaigou:hover .list{
+            background-color: rgb(255,255,255);
+            border:1px rgb(204, 204, 204) solid;
+            border-bottom: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="nav-wrapper clearfix">
+        <div class="nav">
+            <div class="location">
+                <a href="javascript:;"><div class="location-tag"><i class="icofont-location-pin" style="font-size: 15px; color: rgb(241, 6, 25);"></i>
+                北京</div></a>
+                <div class="city-list">
+                    <div class="item-list">
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <div>北京</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div>上海</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div>天津</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div>重庆</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div>河北</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div>山西</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div>河南</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div>辽宁</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div>吉林</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div>黑龙江</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div>内蒙古</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="shortcut">
+                <ul>
+                    <li class="loginAndRegister">
+                        <a href="javascript:;" class="login">你好，请登录</a>
+                        &nbsp;
+                        <a href="javascript:;" class="register">免费注册</a>
+                    </li>
+                    <li class="line"><div class="line"></div></li>
+                    <li><a href="javascript:;">我的订单</a></li>
+                    <li class="line"><div class="line"></div></li>
+                    <li class="list" id="myjd">
+                        <div class="list">
+                        <a href="javascript:;">我的京东</a><i class="arrow icofont-curved-down" style="font-size: '12px';"></i>
+                        
+                    </div>
+                    <div class="myjdlist"></div>
+                </li>
+                    <li class="line"><div class="line"></div></li>
+                    <li><a href="javascript:;">京东会员</a></li>
+                    <li class="line"><div class="line"></div></li>
+                    <li class="list" id="qiyecaigou"><div class="list">
+                    	<a href="javascript:;" >企业采购</a><i class="arrow icofont-curved-down" style="font-size: '12px';"></i>
+                    </div>
+                <div class="qiyecaigoulist"></div>
+                </li>
+                    <li class="line"><div class="line"></div></li>
+                    <li class="list"><div class="list">
+                        <span>客户服务</span><i class="arrow icofont-curved-down" style="font-size: '12px';"></i>
+                    </div></li>
+                    <li class="line"><div class="line"></div></li>
+                    <li class="list"><div class="list">
+                        <span>网站导航</span><i class="arrow icofont-curved-down" style="font-size: '12px';"></i>
+                    </div></li>
+                    <li class="line"><div class="line"></div></li>
+                    <li class="list"><div class="list">
+                        <span>手机京东</span><i class="arrow icofont-curved-down" style="font-size: '12px';"></i>
+                    </div></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

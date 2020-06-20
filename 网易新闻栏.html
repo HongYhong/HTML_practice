@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+<style>
+    body{
+        font-family: "Microsoft YaHei", 微软雅黑,  sans-serif;
+        /* background-color: sandybrown; */
+    }
+
+    div.whole{
+        width: 1000px;
+        height: 1000px;
+        background-color:#ffffff;
+        margin: 35px auto;
+    }
+
+    div.right_content{
+        
+        float: right;
+        width: 30%;
+        height: 80%;
+        margin: 20px auto;
+
+    }
+
+    div.item{
+
+        margin-top: 20px;
+
+    }
+
+    div.title-container{
+        border-top:1px #dddddd solid;
+        width: auto;
+        height: 41px;
+    }
+
+    h2{
+        float: left;
+        border-top: 1px red solid;
+        margin-top: -1px;
+        padding:6px 0 10px 0;
+        font-size: 16px;
+        font-weight: bold;
+
+    }
+
+    div.list{
+        margin-top: 12px;
+    }
+
+    a:link{
+        color: #404040;
+        text-decoration: none;
+    }
+
+    li{
+        display: list-item;
+
+    position: relative;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+
+
+    font-family: 瀹嬩綋;
+
+    }
+
+    li::before{
+        content: '■ ';
+        font-size: smaller;
+        color: rgb(218, 218, 218);
+    }
+
+    a:hover{
+        color: red;
+    }
+
+    a:visited{
+        color: #404040;
+    }
+</style>
+</head>
+
+
+<body>
+    <div class="whole">
+        <div class="right_content">
+            <div class="item">
+                <div class="title-container">
+                    <h2 class="title">
+                        <a href="">军事</a>
+                    </h2>
+                </div>
+                <div class="img">
+                    <img src="https://cms-bucket.ws.126.net/2020/0616/04644a80j00qbzxbr0026c000s600e3c.jpg?imageView&thumbnail=300y150&type=webp" alt="">
+                </div>
+                <div class="list">
+                    <ul>
+                        <li><a href="http://war.163.com/photoview/4T8E0001/2308921.html">俄罗斯陆军大教堂启用，战锤味太浓了</a></li>
+                        <li><a href="http://war.163.com/photoview/4T8E0001/2308920.html">中国运20运输机首次降落莫斯科</a></li>
+                        <li><a href="http://news.163.com/air/photoview/56NT0001/2308926.html">奥地利航空复飞部分航线</a></li>
+                        <li><a href="http://news.163.com/air/photoview/56NT0001/2308925.html">空客飞机"互杀"：机翼切掉尾部</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
